@@ -1,0 +1,114 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e8e8;
+}
+
+#check {
+  display: none;
+}
+
+.like-btn {
+  position: relative;
+  width: 200px;
+  height: 70px;
+  background: #1d1d1d;
+  color: #505050;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.1), 4px 4px 10px rgba(0, 0, 0, 0.4),
+    -2px -2px 8px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.icon-txt {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-right: 1px solid #4e4e4e;
+}
+
+.icon-txt .icon {
+  font-size: 35px;
+  transition: 0.2s ease-out;
+}
+
+.icon-txt .btn-txt {
+  position: absolute;
+  left: 70px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #cecece;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.icon-txt .btn-txt.liked {
+  transform: translateY(50px);
+  color: #fff;
+}
+
+.like-btn .count {
+  position: absolute;
+  font-size: 25px;
+  right: 16px;
+  transition: 0.5s;
+}
+
+.like-btn .count.two {
+  transform: translateY(50px);
+  color: #fff;
+}
+
+#check:checked ~ .icon-txt .btn-txt.like {
+  transform: translateY(-50px);
+}
+
+#check:checked ~ .icon-txt .btn-txt.liked {
+  transform: translateY(0);
+}
+
+#check:checked ~ .count.one {
+  transform: translateY(-50px);
+}
+
+#check:checked ~ .count.two {
+  transform: translateY(0);
+}
+
+#check:checked ~ .icon-txt .icon {
+  color: #fc4e4e;
+  animation: beat 0.2s ease-out;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
